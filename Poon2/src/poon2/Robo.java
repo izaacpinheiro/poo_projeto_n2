@@ -4,8 +4,12 @@ import java.util.Random;
 
 public class Robo {
 
-    private Estado estadoAtual = EstadoEspera.getIntance();
+    private Estado estadoAtual;
     private Strategy comandoAtual;
+    
+    public Robo(){
+        estadoAtual = EstadoEspera.getIntance();
+    }
 
     public void setEstado(Estado estado) {
         this.estadoAtual = estado;
@@ -25,21 +29,20 @@ public class Robo {
 
     public void executarComando() {
         Random random = new Random();
-        int chanceDeErro = random.nextInt(10);  // Gera um número entre 0 e 9
+        int chanceDeErro = random.nextInt(10);
 
         if (chanceDeErro < 2) {  // Simula uma falha em 20% dos casos
             System.out.println("Erro ao executar o comando! Entrando no modo de reparo.");
             setEstado(EstadoReparo.getIntance());  // Muda para o modo de reparo
         } else {
-            if (comandoAtual != null) {
+            if (comandoAtual != null)
                 comandoAtual.executar();
-            } else {
-                System.out.println("Nenhuma Comando foi definido.");
-            }
+            else 
+                System.out.println("Nenhuma comando foi definido.");
         }
     }
     
-    // Invoca o compotamento do Estado atual
+    // Invoca o compotamento do estado atual
     public void requisitar() {
         estadoAtual.estado(this);
     }
