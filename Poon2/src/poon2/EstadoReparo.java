@@ -15,8 +15,19 @@ public class EstadoReparo implements Estado {
     
     @Override
     public void estado(Robo robo) {
-        System.out.println("Robo está em modo de repado. Voltando ao Modo Espera após manutenção.");
+        System.out.println("Robô está em modo de repado. Voltando ao Modo Espera após manutenção.");
+        System.out.println("-- modo de reparo finalizado --");
         robo.setEstado(EstadoEspera.getIntance());
+    }
+
+    @Override
+    public void ligar(Robo robo) {
+        
+    }
+
+    @Override
+    public void desligar(Robo robo) {
+        
     }
     
 }

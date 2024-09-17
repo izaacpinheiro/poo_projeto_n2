@@ -14,5 +14,13 @@ public class Teste {
         r1.requisitar();
         
         r1.requisitar();
+        
+        r1.setComando(new ComandoEntrega());
+        r1.requisitar();
+        
+        r1.requisitar();
+        
+        r1.setComando(new ComandoDancar());
+        r1.requisitar();
     }
 }

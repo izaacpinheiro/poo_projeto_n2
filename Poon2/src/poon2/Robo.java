@@ -29,9 +29,9 @@ public class Robo {
 
     public void executarComando() {
         Random random = new Random();
-        int chanceDeErro = random.nextInt(10);
+        int chanceDeErro = random.nextInt(10); // Gera um número de 0 a 9
 
-        if (chanceDeErro < 2) {  // Simula uma falha em 20% dos casos
+        if (chanceDeErro < 1) {  // Simula uma falha em 10% dos casos
             System.out.println("Erro ao executar o comando! Entrando no modo de reparo.");
             setEstado(EstadoReparo.getIntance());  // Muda para o modo de reparo
         } else {

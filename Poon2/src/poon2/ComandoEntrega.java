@@ -5,7 +5,7 @@ public class ComandoEntrega implements Strategy {
 
     @Override
     public void executar() {
-        System.out.println("O robo está entregando o objeto");
+        System.out.println("> Robô está entregando o objeto.");
     }
     
 }
