@@ -22,12 +22,12 @@ public class EstadoReparo implements Estado {
 
     @Override
     public void ligar(Robo robo) {
-        
+        System.out.println("");
     }
 
     @Override
     public void desligar(Robo robo) {
-        
+        System.out.println("Impossível desligar o Robô em modo de reparo");
     }
     
 }

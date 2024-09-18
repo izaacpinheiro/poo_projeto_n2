@@ -28,7 +28,7 @@ public class EstadoOperacao implements Estado {
     @Override
     public void desligar(Robo robo) {
         System.out.println("Cancelando comandos e desligando");
-        
+        robo.setEstado(EstadoDesligado.getIntance());
     }
     
 }

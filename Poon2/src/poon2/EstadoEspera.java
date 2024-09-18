@@ -16,7 +16,6 @@ public class EstadoEspera implements Estado{
     @Override
     public void estado(Robo robo) {
         System.out.println("Robô em modo de espera. Aguardando comandos.");
-        // robo.setEstado(EstadoOperacao.getIntance()); -> mudar para o setComando do Robo
     }
 
     @Override
@@ -27,5 +26,6 @@ public class EstadoEspera implements Estado{
     @Override
     public void desligar(Robo robo) {
         System.out.println("Robô desligado.");
+        robo.setEstado(EstadoDesligado.getIntance());
     }
 }
