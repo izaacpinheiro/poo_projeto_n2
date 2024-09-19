@@ -15,7 +15,7 @@ public class EstadoDesligado implements Estado {
 
     @Override
     public void estado(Robo robo) {
-        System.out.println("Robô está desligado.");
+        System.out.println("Robô está desligado");
     }
 
     @Override

@@ -15,8 +15,8 @@ public class EstadoOperacao implements Estado {
     
     @Override
     public void estado(Robo robo) {
-        System.out.println("Robô em modo de execução. Executando tarefas");
-        robo.executarComando(); // Usa o comando atual definido
+        System.out.println("Robô (Modo de Operação): executando tarefas");
+        robo.executarComando(); // Usa os comandos definidos
         robo.setEstado(EstadoEspera.getIntance());
     }
 
