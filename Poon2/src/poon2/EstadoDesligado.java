@@ -14,18 +14,20 @@ public class EstadoDesligado implements Estado {
     }
 
     @Override
-    public void estado(Robo robo) {
+    public Estado acao(Robo robo) {
+        System.out.println("Robô (Modo Desligado)");
+        return this;
+    }
+
+    @Override
+    public Estado ligar() {
+        System.out.println("Robô ligado - Estrando em Modo de Espera");
+        return EstadoEspera.getIntance();
+    }
+
+    @Override
+    public Estado desligar() {
         System.out.println("Robô está desligado");
+        return this;
     }
-
-    @Override
-    public void ligar(Robo robo) {
-        // Ligar Robo
-    }
-
-    @Override
-    public void desligar(Robo robo) {
-        // Robo ja está desligado
-    }
-    
 }

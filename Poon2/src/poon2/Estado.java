@@ -2,8 +2,10 @@
 package poon2;
 
 public interface Estado {
+    
+    // Base da Implementação do Padrão State
     // Usado para definir o comportamento do Robo
-    void estado (Robo robo);
-    void ligar(Robo robo);
-    void desligar(Robo robo);
+    Estado acao (Robo robo);
+    Estado ligar();
+    Estado desligar();
 }

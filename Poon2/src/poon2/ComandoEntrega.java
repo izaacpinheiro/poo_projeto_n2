@@ -7,5 +7,4 @@ public class ComandoEntrega implements Strategy {
     public void executar() {
         System.out.println("> Robô está entregando o objeto.");
     }
-    
 }

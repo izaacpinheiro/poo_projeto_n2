@@ -6,12 +6,12 @@ import java.util.Random;
 
 public class Robo {
 
-    private Estado estadoAtual;
-    private List<Strategy> comandos = new ArrayList();
+    private Estado estadoAtual; // O estado atual do Robô define seu comportamento
+    private List<Strategy> comandos = new ArrayList(); // Lista de comando para ser execu
     
     public Robo(){
-        estadoAtual = EstadoEspera.getIntance();
-        requisitar();
+        estadoAtual = EstadoDesligado.getIntance();
+        // requisitar();
     }
 
     public void setEstado(Estado estado) {
@@ -26,18 +26,17 @@ public class Robo {
         comandos.add(est);
         setEstado(EstadoOperacao.getIntance());
     }
-
+    
     public void executarComando() {
         Random random = new Random();
         int chanceDeErro = random.nextInt(10); // Gera um número de 0 a 9
 
         if (chanceDeErro < 1) {  // Simula uma falha em 10% dos casos
-            System.out.println("Erro ao executar o comando! Entrando no Modo de Reparo.");
-            setEstado(EstadoReparo.getIntance());  // Muda para o modo de reparo
-            requisitar();
+            System.out.println("Erro ao executar comando! Entrando no Modo de Reparo.");
+            setEstado(EstadoReparo.getIntance());  // Muda para o Modo de Meparo
+            // requisitar();
         } else {
             if (comandos != null){
-                // comandoAtual.executar();
                 for (Strategy c : comandos)
                     c.executar();
             } else 
@@ -46,8 +45,20 @@ public class Robo {
         comandos.clear();
     }
     
-    // Invoca o compotamento do estado atual
-    public void requisitar() {
-        estadoAtual.estado(this);
+    public void ligar(){
+        estadoAtual = estadoAtual.ligar();
     }
+    
+    public void desligar(){
+        estadoAtual = estadoAtual.desligar();
+    }
+    
+    public void acao(){
+        estadoAtual = estadoAtual.acao(this);
+    }
+    
+    // Invoca o compotamento do estado atual
+//    public void requisitar() {
+//        estadoAtual.estado = ;
+//    }
 }

@@ -7,5 +7,4 @@ public class ComandoDancar implements Strategy {
     public void executar() {
         System.out.println("> Robô está dançando freneticamente!");
     }
-    
 }

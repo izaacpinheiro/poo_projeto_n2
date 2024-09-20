@@ -14,21 +14,22 @@ public class EstadoOperacao implements Estado {
     }
     
     @Override
-    public void estado(Robo robo) {
-        System.out.println("Robô (Modo de Operação): executando tarefas");
+    public Estado acao(Robo robo) {
+        System.out.println("Robô (Modo de Operação): executando comandos");
         robo.executarComando(); // Usa os comandos definidos
-        robo.setEstado(EstadoEspera.getIntance());
+        return EstadoEspera.getIntance();
     }
 
     @Override
-    public void ligar(Robo robo) {
-        System.out.println("");
+    public Estado ligar() {
+        System.out.println("Robô já está ligado");
+        return this;
     }
 
     @Override
-    public void desligar(Robo robo) {
+    public Estado desligar() {
         System.out.println("Cancelando comandos e desligando");
-        robo.setEstado(EstadoDesligado.getIntance());
+        return EstadoDesligado.getIntance();
     }
     
 }
