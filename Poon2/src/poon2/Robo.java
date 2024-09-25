@@ -11,7 +11,6 @@ public class Robo {
     
     public Robo(){
         estadoAtual = EstadoDesligado.getIntance();
-        // requisitar();
     }
 
     public void setEstado(Estado estado) {
@@ -34,7 +33,6 @@ public class Robo {
         if (chanceDeErro < 1) {  // Simula uma falha em 10% dos casos
             System.out.println("Erro ao executar comando! Entrando no Modo de Reparo.");
             setEstado(EstadoReparo.getIntance());  // Muda para o Modo de Meparo
-            // requisitar();
         } else {
             if (comandos != null){
                 for (Strategy c : comandos)
@@ -56,9 +54,4 @@ public class Robo {
     public void acao(){
         estadoAtual = estadoAtual.acao(this);
     }
-    
-    // Invoca o compotamento do estado atual
-//    public void requisitar() {
-//        estadoAtual.estado = ;
-//    }
 }
